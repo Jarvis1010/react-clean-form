@@ -1,0 +1,51 @@
+{
+  "name": "react-quick-form",
+  "version": "1.0.0",
+  "description": "Tool to add a copy codeblock to clipboard",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jarvis1010/react-copy-code.git"
+  },
+  "keywords": [
+    "component",
+    "react",
+    "form",
+    "clipboard"
+  ],
+  "author": "Justin Travis Mair",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
+    "jest": "^23.0.0",
+    "jsdom": "^11.10.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.3.2",
+    "regenerator-runtime": "^0.11.1",
+    "sinon": "^6.0.0",
+    "webpack": "^2.6.1",
+    "react": "^16.3.2"
+  },
+  "peerDependencies": {
+    "react": ">=15.6.0"
+  },
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/Jarvis1010/react-quick-form/issues"
+  },
+  "homepage": "https://github.com/Jarvis1010/react-quick-form#readme"
+}
