@@ -23,6 +23,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.6",
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -31,14 +32,20 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "eslint": "^5.2.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.10.0",
     "jest": "^23.0.0",
     "jsdom": "^11.10.0",
+    "prettier": "^1.14.0",
+    "react": "^16.3.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.3.2",
     "regenerator-runtime": "^0.11.1",
     "sinon": "^6.0.0",
-    "webpack": "^2.6.1",
-    "react": "^16.3.2"
+    "webpack": "^2.6.1"
   },
   "peerDependencies": {
     "react": ">=15.6.0"
