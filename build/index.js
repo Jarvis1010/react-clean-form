@@ -148,9 +148,16 @@ var QuickForm = function (_Component) {
   _createClass(QuickForm, [{
     key: "render",
     value: function render() {
+      var _props = this.props,
+          initialState = _props.initialState,
+          onSubmit = _props.onSubmit,
+          submitValidator = _props.submitValidator,
+          props = _objectWithoutProperties(_props, ["initialState", "onSubmit", "submitValidator"]); // eslint-disable-line
+
+
       return _react2.default.createElement(
         "form",
-        _extends({}, this.props, {
+        _extends({}, props, {
           onChange: this.handleChange,
           onSubmit: this.handleSubmit
         }),

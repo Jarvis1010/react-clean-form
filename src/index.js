@@ -26,9 +26,10 @@ class QuickForm extends Component {
   };
 
   render() {
+    const { initialState, onSubmit, submitValidator, ...props } = this.props; // eslint-disable-line
     return (
       <form
-        {...this.props}
+        {...props}
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >

@@ -1,6 +1,6 @@
 {
-  "name": "react-quick-form",
-  "version": "1.0.0",
+  "name": "react-quickform",
+  "version": "0.1.0",
   "description": "Tool to add a copy codeblock to clipboard",
   "main": "build/index.js",
   "scripts": {
