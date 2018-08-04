@@ -148,16 +148,20 @@ var QuickForm = function (_Component) {
   _createClass(QuickForm, [{
     key: "render",
     value: function render() {
+      /* eslint-disable */
       var _props = this.props,
           initialState = _props.initialState,
           onSubmit = _props.onSubmit,
           submitValidator = _props.submitValidator,
-          props = _objectWithoutProperties(_props, ["initialState", "onSubmit", "submitValidator"]); // eslint-disable-line
+          innerRef = _props.innerRef,
+          props = _objectWithoutProperties(_props, ["initialState", "onSubmit", "submitValidator", "innerRef"]);
+      /* eslint-enable */
 
 
       return _react2.default.createElement(
         "form",
         _extends({}, props, {
+          ref: innerRef,
           onChange: this.handleChange,
           onSubmit: this.handleSubmit
         }),
@@ -176,6 +180,9 @@ QuickForm.defaultProps = {
   },
   submitValidator: function submitValidator() {
     return true;
+  },
+  innerRef: function innerRef() {
+    return null;
   }
 };
 exports.default = QuickForm;

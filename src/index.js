@@ -4,7 +4,8 @@ class QuickForm extends Component {
   static defaultProps = {
     initialState: {},
     onSubmit: () => null,
-    submitValidator: () => true
+    submitValidator: () => true,
+    innerRef: () => null
   };
 
   state = { ...this.props.initialState, submitError: false };
@@ -25,10 +26,19 @@ class QuickForm extends Component {
   };
 
   render() {
-    const { initialState, onSubmit, submitValidator, ...props } = this.props; // eslint-disable-line
+    /* eslint-disable */
+    const {
+      initialState,
+      onSubmit,
+      submitValidator,
+      innerRef,
+      ...props
+    } = this.props;
+    /* eslint-enable */
     return (
       <form
         {...props}
+        ref={innerRef}
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
