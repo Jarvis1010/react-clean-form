@@ -3,7 +3,6 @@ import React, { Component } from "react";
 class QuickForm extends Component {
   static defaultProps = {
     initialState: {},
-    className: "",
     onSubmit: () => null,
     submitValidator: () => true
   };
@@ -15,7 +14,7 @@ class QuickForm extends Component {
   };
 
   handleSubmit = e => {
-    e.preventDefault();
+    if (e) e.preventDefault();
     const { submitValidator, onSubmit } = this.props;
     if (submitValidator(this.state)) {
       const { submitError, ...state } = this.state; // eslint-disable-line

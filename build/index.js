@@ -127,7 +127,7 @@ var QuickForm = function (_Component) {
 
       _this.setState((_this$setState = {}, _defineProperty(_this$setState, name, value), _defineProperty(_this$setState, "submitError", false), _this$setState));
     }, _this.handleSubmit = function (e) {
-      e.preventDefault();
+      if (e) e.preventDefault();
       var _this$props = _this.props,
           submitValidator = _this$props.submitValidator,
           onSubmit = _this$props.onSubmit;
@@ -171,7 +171,6 @@ var QuickForm = function (_Component) {
 
 QuickForm.defaultProps = {
   initialState: {},
-  className: "",
   onSubmit: function onSubmit() {
     return null;
   },

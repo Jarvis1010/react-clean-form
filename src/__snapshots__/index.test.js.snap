@@ -1,3 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Stuff Renders component 1`] = `<div />`;
+exports[`Form functions form render with falsey validator Renders component 1`] = `
+<form
+  onChange={[Function]}
+  onSubmit={[Function]}
+>
+  <React.Fragment>
+    <input />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </React.Fragment>
+</form>
+`;
+
+exports[`Form functions form renders with truthy validator Renders component 1`] = `
+<form
+  onChange={[Function]}
+  onSubmit={[Function]}
+>
+  <React.Fragment>
+    <input
+      name="input"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </React.Fragment>
+</form>
+`;
