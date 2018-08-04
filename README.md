@@ -1,6 +1,6 @@
 # react-clean-form
 
-react-clean-form is a component that uses the render function as a child pattern.
+react-clean-form is a component that uses the render function as a child pattern passing state into the function. The goal of the form was to build a composable, unopinionated form that makes it easy to get a quick and easy form into your react app with out alot of boilerplate code. react-clean-form manages state for you so you can simply bring it in to your project, add the initial state and corresponding input fields, and add a handleSubmit function to the onSubmitProp to capture the state of the form at submission. The innerRef prop is a pass through prop to the rendered form's ref prop so you can have access to the form's ref and the submitValidator lets you pass a custom submission validation function that will change the value of the state.submitError value to true if there fields are in an invalid state (The value returns to false as soon as the state is changed again).
 
 ## Installation
 
@@ -41,4 +41,5 @@ In lieu of a formal styleguide, please format your code using 'prettier' prior t
 
 ## Release History
 
+- 1.0.1 Documentation update
 - 1.0.0 Initial Stable Release
