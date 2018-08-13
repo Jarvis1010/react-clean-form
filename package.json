@@ -1,6 +1,6 @@
 {
   "name": "react-clean-form",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tool to add a copy codeblock to clipboard",
   "main": "build/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jarvis1010/react-copy-code.git"
+    "url": "git+https://github.com/Jarvis1010/react-clean-form"
   },
   "keywords": [
     "component",
