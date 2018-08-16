@@ -104,59 +104,50 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var QuickForm = function (_Component) {
-  _inherits(QuickForm, _Component);
+var CleanForm = function (_Component) {
+  _inherits(CleanForm, _Component);
 
-  function QuickForm() {
+  function CleanForm() {
     var _ref;
 
     var _temp, _this, _ret;
 
-    _classCallCheck(this, QuickForm);
+    _classCallCheck(this, CleanForm);
 
     for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = QuickForm.__proto__ || Object.getPrototypeOf(QuickForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _extends({}, _this.props.initialState, { submitError: false }), _this.handleChange = function (_ref2) {
-      var _this$setState;
-
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CleanForm.__proto__ || Object.getPrototypeOf(CleanForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.props.initialState, _this.handleChange = function (_ref2) {
       var _ref2$target = _ref2.target,
           name = _ref2$target.name,
           value = _ref2$target.value;
 
-      _this.setState((_this$setState = {}, _defineProperty(_this$setState, name, value), _defineProperty(_this$setState, "submitError", false), _this$setState));
+      _this.setState(_defineProperty({}, name, value));
     }, _this.handleSubmit = function (e) {
       if (e) e.preventDefault();
-      var _this$props = _this.props,
-          submitValidator = _this$props.submitValidator,
-          onSubmit = _this$props.onSubmit;
-
-      if (submitValidator(_this.state)) {
-        var _this$state = _this.state,
-            submitError = _this$state.submitError,
-            state = _objectWithoutProperties(_this$state, ["submitError"]); // eslint-disable-line
-
-
-        onSubmit(state);
-      } else {
-        _this.setState({ submitError: true });
-      }
+      _this.props.onSubmit(_this.state);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
-  _createClass(QuickForm, [{
+  _createClass(CleanForm, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       /* eslint-disable */
       var _props = this.props,
-          initialState = _props.initialState,
           onSubmit = _props.onSubmit,
-          submitValidator = _props.submitValidator,
           innerRef = _props.innerRef,
-          props = _objectWithoutProperties(_props, ["initialState", "onSubmit", "submitValidator", "innerRef"]);
+          props = _objectWithoutProperties(_props, ["onSubmit", "innerRef"]);
       /* eslint-enable */
 
+
+      var children = _react2.default.Children.map(this.props.children, function (child) {
+        return _react2.default.cloneElement(child, {
+          value: _this2.state[child.name]
+        });
+      });
 
       return _react2.default.createElement(
         "form",
@@ -165,27 +156,24 @@ var QuickForm = function (_Component) {
           onChange: this.handleChange,
           onSubmit: this.handleSubmit
         }),
-        this.props.children(this.state)
+        children
       );
     }
   }]);
 
-  return QuickForm;
+  return CleanForm;
 }(_react.Component);
 
-QuickForm.defaultProps = {
+CleanForm.defaultProps = {
   initialState: {},
   onSubmit: function onSubmit() {
     return null;
-  },
-  submitValidator: function submitValidator() {
-    return true;
   },
   innerRef: function innerRef() {
     return null;
   }
 };
-exports.default = QuickForm;
+exports.default = CleanForm;
 
 /***/ })
 /******/ ]);

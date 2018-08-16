@@ -1,40 +1,33 @@
 import React, { Component } from "react";
 
-class QuickForm extends Component {
+class CleanForm extends Component {
   static defaultProps = {
     initialState: {},
     onSubmit: () => null,
-    submitValidator: () => true,
     innerRef: () => null
   };
 
-  state = { ...this.props.initialState, submitError: false };
+  state = this.props.initialState;
 
   handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value, submitError: false });
+    this.setState({ [name]: value });
   };
 
   handleSubmit = e => {
     if (e) e.preventDefault();
-    const { submitValidator, onSubmit } = this.props;
-    if (submitValidator(this.state)) {
-      const { submitError, ...state } = this.state; // eslint-disable-line
-      onSubmit(state);
-    } else {
-      this.setState({ submitError: true });
-    }
+    this.props.onSubmit(this.state);
   };
 
   render() {
     /* eslint-disable */
-    const {
-      initialState,
-      onSubmit,
-      submitValidator,
-      innerRef,
-      ...props
-    } = this.props;
+    const { onSubmit, innerRef, ...props } = this.props;
     /* eslint-enable */
+    const children = React.Children.map(this.props.children, child =>
+      React.cloneElement(child, {
+        value: this.state[child.name]
+      })
+    );
+
     return (
       <form
         {...props}
@@ -42,10 +35,10 @@ class QuickForm extends Component {
         onChange={this.handleChange}
         onSubmit={this.handleSubmit}
       >
-        {this.props.children(this.state)}
+        {children}
       </form>
     );
   }
 }
 
-export default QuickForm;
+export default CleanForm;
