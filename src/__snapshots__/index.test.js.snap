@@ -2,11 +2,6 @@
 
 exports[`Form functions Renders component 1`] = `
 <form
-  initialState={
-    Object {
-      "input": "",
-    }
-  }
   onChange={[Function]}
   onSubmit={[Function]}
 />

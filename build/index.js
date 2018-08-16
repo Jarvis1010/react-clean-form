@@ -137,9 +137,10 @@ var CleanForm = function (_Component) {
 
       /* eslint-disable */
       var _props = this.props,
+          initialState = _props.initialState,
           onSubmit = _props.onSubmit,
           innerRef = _props.innerRef,
-          props = _objectWithoutProperties(_props, ["onSubmit", "innerRef"]);
+          props = _objectWithoutProperties(_props, ["initialState", "onSubmit", "innerRef"]);
       /* eslint-enable */
 
 

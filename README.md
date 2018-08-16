@@ -37,6 +37,7 @@ In lieu of a formal styleguide, please format your code using 'prettier' prior t
 
 ## Release History
 
+- 2.0.1 Bug Fix
 - 2.0.0 Removed the need to render children as a function.
 - 1.0.1 - 1.0.2 Documentation update
 - 1.0.0 Initial Stable Release
