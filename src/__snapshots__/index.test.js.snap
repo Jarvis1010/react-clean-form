@@ -3,6 +3,84 @@
 exports[`Form functions Renders component 1`] = `
 <form
   onChange={[Function]}
+  onReset={[Function]}
   onSubmit={[Function]}
-/>
+>
+  <input
+    key=".0"
+    name="input"
+  />
+  <select
+    key=".1"
+    name="select"
+  >
+    <option
+      key=".0"
+      value="value1"
+    >
+      Value1
+    </option>
+    <option
+      key=".1"
+      value="value2"
+    >
+      Value2
+    </option>
+  </select>
+  <select
+    key=".2"
+    multiple={true}
+    name="selectMultiple"
+    value={Array []}
+  >
+    <option
+      key=".0"
+      value="value1"
+    >
+      Value1
+    </option>
+    <option
+      key=".1"
+      value="value2"
+    >
+      Value2
+    </option>
+  </select>
+  <input
+    checked={false}
+    key=".3"
+    name="radio"
+    type="radio"
+    value="radio1"
+  />
+   Radio1
+  <input
+    checked={false}
+    key=".5"
+    name="radio"
+    type="radio"
+    value="radio2"
+  />
+   Radio2
+  <input
+    key=".7"
+    name="checkbox1"
+    type="checkbox"
+    value="checkbox1"
+  />
+   checkbox1
+  <input
+    key=".9"
+    name="checkbox2"
+    type="checkbox"
+    value="checkbox2"
+  />
+   checkbox2
+  <button
+    key=".b"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
 `;

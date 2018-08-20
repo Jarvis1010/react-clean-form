@@ -118,23 +118,51 @@ var CleanForm = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CleanForm.__proto__ || Object.getPrototypeOf(CleanForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.props.initialState, _this.handleChange = function (_ref2) {
-      var _ref2$target = _ref2.target,
-          name = _ref2$target.name,
-          value = _ref2$target.value;
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CleanForm.__proto__ || Object.getPrototypeOf(CleanForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.props.initialState, _this.cloner = function (type) {
+      return function (child) {
+        var _React$cloneElement;
+
+        return child.props ? _react2.default.cloneElement(child, (_React$cloneElement = {}, _defineProperty(_React$cloneElement, type, _this.state[child.props.name] ? _this.state[child.props.name] : child.props[type]), _defineProperty(_React$cloneElement, "children", _react2.default.Children.map(child.props.children, _this.deepMap)), _React$cloneElement)) : child;
+      };
+    }, _this.cloneTypes = {
+      default: _this.cloner("value"),
+      checkbox: _this.cloner("checked"),
+      radio: function radio(child) {
+        return child.props ? _react2.default.cloneElement(child, {
+          checked: child.props.value === _this.state[child.props.name],
+          children: _react2.default.Children.map(child.props.children, _this.deepMap)
+        }) : child;
+      }
+    }, _this.deepMap = function (child) {
+      return _this.cloneTypes[child.props && child.props.type] ? _this.cloneTypes[child.props.type](child) : _this.cloneTypes.default(child);
+    }, _this.handleChange = function (_ref2) {
+      var target = _ref2.target;
+
+      var value = void 0;
+      var name = target.name;
+
+      if (target.type === "select-multiple") {
+        var oldValue = _this.state[name];
+        value = oldValue.includes(target.value) ? oldValue.filter(function (x) {
+          return x !== target.value;
+        }) : oldValue.concat(target.value);
+      } else {
+        value = target.type === "checkbox" ? target.checked : target.value;
+      }
 
       _this.setState(_defineProperty({}, name, value));
     }, _this.handleSubmit = function (e) {
       if (e) e.preventDefault();
       _this.props.onSubmit(_this.state);
+    }, _this.handleReset = function (e) {
+      if (e) e.preventDefault();
+      _this.setState(_this.props.initialState);
     }, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(CleanForm, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       /* eslint-disable */
       var _props = this.props,
           initialState = _props.initialState,
@@ -144,18 +172,15 @@ var CleanForm = function (_Component) {
       /* eslint-enable */
 
 
-      var children = _react2.default.Children.map(this.props.children, function (child) {
-        return _react2.default.cloneElement(child, {
-          value: _this2.state[child.name]
-        });
-      });
+      var children = _react2.default.Children.map(this.props.children, this.deepMap);
 
       return _react2.default.createElement(
         "form",
         _extends({}, props, {
           ref: innerRef,
           onChange: this.handleChange,
-          onSubmit: this.handleSubmit
+          onSubmit: this.handleSubmit,
+          onReset: this.handleReset
         }),
         children
       );
