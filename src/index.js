@@ -9,15 +9,24 @@ class CleanForm extends Component {
 
   state = this.props.initialState;
 
-  cloner = type => child =>
-    child.props
+  defaultValues = {
+    value: "",
+    checked: false,
+    radio: false
+  };
+
+  cloner = type => child => {
+    return child.props
       ? React.cloneElement(child, {
-          [type]: this.state[child.props.name]
+          [type]: this.state.hasOwnProperty(child.props.name)
             ? this.state[child.props.name]
-            : child.props[type],
+            : child.props[type]
+              ? child.props[type]
+              : this.defaultValues[type],
           children: React.Children.map(child.props.children, this.deepMap)
         })
       : child;
+  };
 
   cloneTypes = {
     default: this.cloner("value"),

@@ -118,11 +118,15 @@ var CleanForm = function (_Component) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CleanForm.__proto__ || Object.getPrototypeOf(CleanForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.props.initialState, _this.cloner = function (type) {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = CleanForm.__proto__ || Object.getPrototypeOf(CleanForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = _this.props.initialState, _this.defaultValues = {
+      value: "",
+      checked: false,
+      radio: false
+    }, _this.cloner = function (type) {
       return function (child) {
         var _React$cloneElement;
 
-        return child.props ? _react2.default.cloneElement(child, (_React$cloneElement = {}, _defineProperty(_React$cloneElement, type, _this.state[child.props.name] ? _this.state[child.props.name] : child.props[type]), _defineProperty(_React$cloneElement, "children", _react2.default.Children.map(child.props.children, _this.deepMap)), _React$cloneElement)) : child;
+        return child.props ? _react2.default.cloneElement(child, (_React$cloneElement = {}, _defineProperty(_React$cloneElement, type, _this.state.hasOwnProperty(child.props.name) ? _this.state[child.props.name] : child.props[type] ? child.props[type] : _this.defaultValues[type]), _defineProperty(_React$cloneElement, "children", _react2.default.Children.map(child.props.children, _this.deepMap)), _React$cloneElement)) : child;
       };
     }, _this.cloneTypes = {
       default: _this.cloner("value"),

@@ -9,10 +9,12 @@ exports[`Form functions Renders component 1`] = `
   <input
     key=".0"
     name="input"
+    value=""
   />
   <select
     key=".1"
     name="select"
+    value=""
   >
     <option
       key=".0"
@@ -63,6 +65,7 @@ exports[`Form functions Renders component 1`] = `
   />
    Radio2
   <input
+    checked={false}
     key=".7"
     name="checkbox1"
     type="checkbox"
@@ -70,6 +73,7 @@ exports[`Form functions Renders component 1`] = `
   />
    checkbox1
   <input
+    checked={false}
     key=".9"
     name="checkbox2"
     type="checkbox"
@@ -79,6 +83,7 @@ exports[`Form functions Renders component 1`] = `
   <button
     key=".b"
     type="submit"
+    value=""
   >
     Submit
   </button>

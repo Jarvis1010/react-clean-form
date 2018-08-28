@@ -1,6 +1,6 @@
 {
   "name": "react-clean-form",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Tool to add a copy codeblock to clipboard",
   "main": "build/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "form",
     "clipboard"
   ],
-  "author": "Justin Travis Mair",
+  "author": "Justin Travis Waith-Mair",
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.26.0",
