@@ -10,16 +10,20 @@
 
 ## Usage
 
-```
-import Form from 'react-clean-form';
+```javascript
+import Form from "react-clean-form";
 
 const App = () => (
-   <div>
-      <Form initialState={{input:''}} onSubmit={handleSubmit} innerRef={handleRef}>
-        <input name="input" />
-        <button type="submit">Submit</button>
-      </Form>
-   </div>
+  <div>
+    <Form
+      initialState={{ input: "" }}
+      onSubmit={handleSubmit}
+      innerRef={handleRef}
+    >
+      <input name="input" />
+      <button type="submit">Submit</button>
+    </Form>
+  </div>
 );
 ```
 

@@ -1,14 +1,13 @@
 import React from "react";
 import toJSON from "enzyme-to-json";
 import { shallow } from "enzyme";
-import sinon from "sinon";
 import Form from "./index";
 
 describe("Form functions", () => {
   let wrapper;
   let spy;
   beforeEach(() => {
-    spy = sinon.spy();
+    spy = jest.fn();
     wrapper = shallow(
       <Form
         initialState={{
@@ -47,7 +46,7 @@ describe("Form functions", () => {
       .first()
       .simulate("submit");
 
-    expect(spy.calledOnce).toBe(true);
+    expect(spy.mock.calls.length).toBe(1);
   });
   it("updates value of input", () => {
     const newValue = "Hello";
