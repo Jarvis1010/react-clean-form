@@ -34,6 +34,7 @@ describe("Form functions", () => {
         <input type="checkbox" name="checkbox1" value="checkbox1" /> checkbox1
         <input type="checkbox" name="checkbox2" value="checkbox2" /> checkbox2
         <button type="submit">Submit</button>
+        {false && <p>null value</p>}
       </Form>
     );
   });

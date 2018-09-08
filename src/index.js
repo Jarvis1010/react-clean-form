@@ -16,7 +16,7 @@ class CleanForm extends Component {
   };
 
   cloner = type => child => {
-    return child.props
+    return child && child.props
       ? React.cloneElement(child, {
           [type]: this.state.hasOwnProperty(child.props.name)
             ? this.state[child.props.name]
@@ -42,7 +42,7 @@ class CleanForm extends Component {
   };
 
   deepMap = child =>
-    this.cloneTypes[child.props && child.props.type]
+    this.cloneTypes[child && child.props && child.props.type]
       ? this.cloneTypes[child.props.type](child)
       : this.cloneTypes.default(child);
 

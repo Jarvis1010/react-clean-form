@@ -126,7 +126,7 @@ var CleanForm = function (_Component) {
       return function (child) {
         var _React$cloneElement;
 
-        return child.props ? _react2.default.cloneElement(child, (_React$cloneElement = {}, _defineProperty(_React$cloneElement, type, _this.state.hasOwnProperty(child.props.name) ? _this.state[child.props.name] : child.props[type] ? child.props[type] : _this.defaultValues[type]), _defineProperty(_React$cloneElement, "children", _react2.default.Children.map(child.props.children, _this.deepMap)), _React$cloneElement)) : child;
+        return child && child.props ? _react2.default.cloneElement(child, (_React$cloneElement = {}, _defineProperty(_React$cloneElement, type, _this.state.hasOwnProperty(child.props.name) ? _this.state[child.props.name] : child.props[type] ? child.props[type] : _this.defaultValues[type]), _defineProperty(_React$cloneElement, "children", _react2.default.Children.map(child.props.children, _this.deepMap)), _React$cloneElement)) : child;
       };
     }, _this.cloneTypes = {
       default: _this.cloner("value"),
@@ -138,7 +138,7 @@ var CleanForm = function (_Component) {
         }) : child;
       }
     }, _this.deepMap = function (child) {
-      return _this.cloneTypes[child.props && child.props.type] ? _this.cloneTypes[child.props.type](child) : _this.cloneTypes.default(child);
+      return _this.cloneTypes[child && child.props && child.props.type] ? _this.cloneTypes[child.props.type](child) : _this.cloneTypes.default(child);
     }, _this.handleChange = function (_ref2) {
       var target = _ref2.target;
 
