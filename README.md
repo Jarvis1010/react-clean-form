@@ -41,7 +41,7 @@ In lieu of a formal styleguide, please format your code using 'prettier' prior t
 
 ## Release History
 
-- 2.1.1 Bug fix when value's were not set on mounting
+- 2.1.1 - 2.1.2 Bug fix when value's were not set on mounting and when child is null
 - 2.1.0 Improved functionality with multiple form elements
 - 2.0.1 - 2.0.2 Bug Fix and documention fix
 - 2.0.0 Removed the need to render children as a function.
