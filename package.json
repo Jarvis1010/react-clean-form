@@ -1,7 +1,7 @@
 {
   "name": "react-clean-form",
-  "version": "2.1.2",
-  "description": "Tool to add a copy codeblock to clipboard",
+  "version": "2.1.3",
+  "description": "Simple non opinionated form component",
   "main": "build/index.js",
   "scripts": {
     "test": "jest --watch",
@@ -15,43 +15,36 @@
   "keywords": [
     "component",
     "react",
-    "form",
-    "clipboard"
+    "form"
   ],
   "author": "Justin Travis Waith-Mair",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.6",
-    "babel-jest": "^23.4.2",
-    "babel-loader": "^7.1.4",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.3.1",
-    "enzyme-to-json": "^3.3.4",
-    "eslint": "^5.4.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-prettier": "^2.3.1",
-    "eslint-plugin-react": "^7.11.1",
-    "jest": "^23.5.0",
-    "prettier": "^1.14.2",
-    "react": "^16.3.2",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.5.0",
+    "jsdom": "^14.0.0",
+    "react": "^16.8.4",
     "react-addons-test-utils": "^15.6.2",
-    "react-dom": "^16.4.2",
-    "react-test-renderer": "^16.3.2",
-    "regenerator-runtime": "^0.11.1",
-    "webpack": "^2.6.1"
+    "react-dom": "^16.8.4",
+    "react-test-renderer": "^16.8.4",
+    "regenerator-runtime": "^0.13.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-node-externals": "^1.7.2"
   },
   "peerDependencies": {
-    "react": ">=15.6.0"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
-  "dependencies": {},
   "bugs": {
     "url": "https://github.com/Jarvis1010/react-quick-form/issues"
   },
