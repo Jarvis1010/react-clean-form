@@ -1,0 +1,2 @@
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t(require("react")):"function"==typeof define&&define.amd?define(["react"],t):e.reactCleanForm=t(e.react)}(this,function(e){return function(t){void 0===t&&(t={});var n=e.useState(t),r=n[1];return[n[0],function(e){var t=e.target,n=t.name;r(function(e){var r;return Object.assign({},e,((r={})[n]="checkbox"===t.type?t.checked:t.value,r))})}]}});
+//# sourceMappingURL=index.umd.js.map

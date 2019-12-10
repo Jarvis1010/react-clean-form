@@ -1,0 +1,2 @@
+import{useState as e}from"react";export default function(t){void 0===t&&(t={});var n=e(t),r=n[0],c=n[1];return[t,function(e){var t,n=e.target,a=n.name;if(t="checkbox"===n.type?n.checked:n.value,"select-multiple"===n.type){var u=r[a];t=u.includes(n.value)?u.filter(function(e){return e!==n.value}):u.concat(n.value)}console.log(t),c(function(e){var n;return Object.assign({},e,((n={})[a]=t,n))})}]}
+//# sourceMappingURL=index.mjs.map
