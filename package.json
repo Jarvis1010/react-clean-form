@@ -4,12 +4,12 @@
   "description": "Simple non opinionated form hook",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "source": "src/index.ts",
+  "source": "src/index.tsx",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --watch",
-    "start": "microbundle watch",
-    "build": "microbundle"
+    "start": "microbundle watch --jsx react",
+    "build": "microbundle --jsx react"
   },
   "repository": {
     "type": "git",
