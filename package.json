@@ -23,6 +23,11 @@
   "author": "Justin Travis Waith-Mair",
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.7.5",
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/preset-react": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.4",
     "@types/react": "^16.9.16",
     "@types/react-dom": "^16.9.4",
     "eslint-plugin-react-hooks": "^2.3.0",
@@ -40,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/Jarvis1010/react-quick-form/issues"
   },
-  "homepage": "https://github.com/Jarvis1010/react-quick-form#readme"
+  "homepage": "https://github.com/Jarvis1010/react-quick-form#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0"
+  }
 }
