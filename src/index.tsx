@@ -1,6 +1,9 @@
 import * as React from 'react';
+
 type State = { [s: string]: any };
+
 const { useState } = React;
+
 export const useForm = (
   initialState: State = {},
 ): [State, (e: React.SyntheticEvent) => void] => {
@@ -28,7 +31,7 @@ export const useForm = (
 
 export type FormProps = {
   initialState: State;
-  onSubmit: (state: State) => void;
+  onSubmit?: (state: State) => void;
   children?: React.ReactNode;
 } & React.PropsWithoutRef<JSX.IntrinsicElements['form']>;
 

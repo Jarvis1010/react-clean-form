@@ -58,7 +58,7 @@ In lieu of a formal style guide, please format your code using 'prettier' prior 
 
 ## Release History
 
-- 3.0.1 added Typescript and updated to React Hooks. useForm hook exported as a named export.
+- 3.0.1- 3.0.2 added Typescript and updated to React Hooks. useForm hook exported as a named export.
 - 2.1.3 fixed webpack build issue that was bundling react
 - 2.1.1 - 2.1.2 Bug fix when value's were not set on mounting and when child is null
 - 2.1.0 Improved functionality with multiple form elements

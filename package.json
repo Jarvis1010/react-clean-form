@@ -1,6 +1,6 @@
 {
   "name": "react-clean-form",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Simple non opinionated form hook",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -11,6 +11,9 @@
     "start": "microbundle watch --jsx react",
     "build": "microbundle --jsx react"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Jarvis1010/react-clean-form"
